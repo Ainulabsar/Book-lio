@@ -1,0 +1,39 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+.card{
+    width: 13rem;
+        height: 28rem;
+}
+
+.mainCard{
+    background-color: rgb(235, 235, 240);
+ padding: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: centers;
+    /* width: 100%; */
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.img-top{
+    height: 15rem;
+}
+#AddBook{
+    justify-content: end;
+        align-items: end;
+        display: flex;
+        padding: 10px;
+}
