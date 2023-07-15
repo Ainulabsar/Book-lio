@@ -31,7 +31,7 @@ const getById = async (req, res, next) => {
 };
 
 const addBooks = async (req, res, next) => {
-  const { name, author, description, price, available, image } = req.body;
+  const { name, author, description, price, image } = req.body;
   let book;
 
   try {
@@ -40,7 +40,6 @@ const addBooks = async (req, res, next) => {
       author,
       description,
       price,
-      available,
       image,
     });
     await book.save();

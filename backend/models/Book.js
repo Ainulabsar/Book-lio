@@ -18,9 +18,7 @@ const bookSchema = new Schema({
   price: {
     type: Number,
   },
-  available: {
-    type: Boolean,
-  },
+
   image: {
     type: String,
     require: true,

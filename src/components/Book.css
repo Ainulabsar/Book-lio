@@ -14,8 +14,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: centers;
-    /* width: 100%; */
+    align-items: center;
+    width: 100%;
 }
 ul{
     display: flex;
@@ -32,8 +32,11 @@ ul{
     height: 15rem;
 }
 #AddBook{
-    justify-content: end;
-        align-items: end;
+    justify-content: flex-end;
+        align-items: flex-end;
         display: flex;
         padding: 10px;
+}
+.card-body{
+    height: 10rem;
 }
