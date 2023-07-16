@@ -14,7 +14,7 @@ function Book(props) {
             <h6>{author}</h6>
             <p className="card-text">{description}</p>
             <div className="btns">
-              <a href="/" className="btn btn-primary">
+              <a href={`/books/${_id}`} className="btn btn-primary">
                 Update
               </a>{" "}
               <a href="/" className="btn btn-primary">
