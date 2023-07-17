@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Book from "./Book";
 import "./Book.css";
+import { NavigationIcon } from "@mui/icons-material";
+// import { Fab } from "@mui/icons-material";
+import Fab from "@mui/material/Fab";
 
 const URL = "http://localhost:5000/books";
 const fetchHandler = async () => {
@@ -16,7 +19,7 @@ function Home() {
 
   return (
     <>
-      <div className="container">
+      <div>
         <ul>
           <div className="mainCard">
             {books &&
@@ -28,11 +31,10 @@ function Home() {
           </div>
         </ul>
       </div>
-      <div id="AddBook">
-        <a href="/Add" className="btn btn-primary">
-          Add Book
-        </a>
-      </div>
+      <Fab variant="extended">
+        <NavigationIcon sx={{ mr: 1 }} />
+        Navigate
+      </Fab>
     </>
   );
 }
