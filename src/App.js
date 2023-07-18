@@ -16,6 +16,7 @@ function App() {
         <Route path="/About" element={<About />}></Route>
         <Route path="/Add" element={<Add />}></Route>
         <Route path="/books/:id" element={<BookDetail />}></Route>
+        <Route path="/books" element={<book />}></Route>
       </Routes>
     </>
   );

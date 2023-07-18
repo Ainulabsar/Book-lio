@@ -40,7 +40,7 @@ ul{
         align-items: flex-end;
         display: flex;
         padding: 10px;
-        position: relative;
+        position: absolute;
 }
 .body{
     height: 100%;
@@ -83,4 +83,12 @@ ul{
     align-items: center;
 
     
+}
+.Add{
+   position: fixed;
+   background-color: blanchedalmond;
+   text-align: center;
+   cursor: pointer;
+   z-index: 9999;
+
 }

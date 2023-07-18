@@ -4,7 +4,7 @@ import "./Nav.css";
 function Nav() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             BookLio
@@ -52,6 +52,7 @@ function Nav() {
               >
                 <MenuIcon />
               </button>
+
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="/">
