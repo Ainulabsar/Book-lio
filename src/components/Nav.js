@@ -1,5 +1,6 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+// import book from "./Buyer/book";
 import "./Nav.css";
 function Nav() {
   return (
@@ -55,7 +56,7 @@ function Nav() {
 
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="/Book">
                     Buyer
                   </a>
                 </li>

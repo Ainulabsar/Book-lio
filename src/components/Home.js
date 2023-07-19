@@ -39,6 +39,7 @@ function Home() {
           color="primary"
           aria-label="Add"
           className="AddBook"
+          href="./Add"
         >
           <AddIcon />
           Add Book
