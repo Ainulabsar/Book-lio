@@ -14,8 +14,38 @@
    justify-content: space-between;
    width: 100%;
    background-color: rgb(192, 192, 252);
-   padding: 25px;
+   padding: 15px; 
 }
-.container{
-    background-color: rgb(225, 248, 140);
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
+.Detail{
+    display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: .2rem;
+}
+.bdetails{
+    display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 30%;
+}
+.Date,.Bill{
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+.Bills{
+   border: 1px solid rgb(136, 132, 132);
+    width: 100%;
+    padding: 10px;
+}
+.qty{
+    width: 20%;
+}
+.desc{
+    width:50%
 }
