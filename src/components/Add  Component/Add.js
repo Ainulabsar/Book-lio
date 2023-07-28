@@ -36,15 +36,7 @@ const Add = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    // console.log(e.target.name, "value", e.target.value);
   };
-
-  // const handleChange = (e) => {
-  //   setInputs((prevState) => ({
-  //     ...prevState,
-  //     [e.target.name]: e.target.value,
-  //   }));
-  // };
 
   return (
     <div className="container">
@@ -105,18 +97,6 @@ const Add = () => {
             id="exampleInputPassword1"
           />
         </div>
-        {/* <div className="mb-3">
-          <label>Add Image</label> <br />
-          <input
-            type="file"
-            // accept=".png, .jpg, .jpeg"
-            name="image"
-            className="form-label"
-            onChange={handleChange}
-            value={inputs.image}
-          />
-        </div> */}
-
         <button type="submit" className="btn btn-primary">
           Add Book
         </button>
