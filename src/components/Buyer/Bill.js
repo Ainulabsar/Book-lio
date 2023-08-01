@@ -1,35 +1,13 @@
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import Billi from "./Billi";
-// const URL = "http://localhost:5000/books";
-// const fetchHandler = async () => {
-//   return await axios.get(URL).then((res) => res.data);
-// };
-
-// const Bill = () => {
-//   const [books, setBooks] = useState();
-
-//   useEffect(() => {
-//     fetchHandler().then((data) => setBooks(data.books));
-//   }, []);
-
-//   return (
-//     <>
-//       {books &&
-//         books.map((book, i) => (
-//           <div key={i}>
-//             <Billi book={book} />
-//           </div>
-//         ))}
-//     </>
-//   );
-// };
-
-// export default Bill;
 import React from "react";
 import "./Book.css";
+import { useLocation } from "react-router-dom";
 
 function Bill() {
+  const location = useLocation();
+  const bookData = location.state ? location.state.bookData : null;
+
+  console.log("Location state:", location.state); // Check the location.state object
+  console.log("bookData:", bookData);
   const handleSave = () => {
     console.log("Saved");
     window.print();
@@ -78,34 +56,38 @@ function Bill() {
                 </p>
               </div>
             </div>
-            <div>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Sl.No</th>
-                    <th scope="col" className="desc">
-                      Description
-                    </th>
-                    <th scope="col" className="qty">
-                      Quantity
-                    </th>
-                    <th scope="col">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Book name</td>
-                    <td>1</td>
-                    <td>50</td>
-                  </tr>
-                </tbody>
-              </table>
+            {bookData && (
+              <div>
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Sl.No</th>
+                      <th scope="col" className="desc">
+                        Description
+                      </th>
+                      <th scope="col" className="qty">
+                        Quantity
+                      </th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>{bookData.book.name}</td>
+                      {/* <td>{bookData.name}</td> */}
+                      <td>1</td>
+                      <td>{bookData.book.price}</td>
+                    </tr>
+                  </tbody>
+                </table>
 
-              <p>
-                <strong>Total Amount:50 </strong>
-              </p>
-            </div>
+                <p>
+                  Total Amount: <strong>{bookData.book.price} </strong>
+                </p>
+              </div>
+            )}
+
             <div>
               <button
                 type="button"
