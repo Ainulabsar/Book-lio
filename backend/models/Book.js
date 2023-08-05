@@ -25,4 +25,13 @@ const bookSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Book", bookSchema);
+const registerSchema = new Schema({
+  name: String,
+  email: String,
+  password: String,
+});
+
+const BookModel = mongoose.model("Book", bookSchema);
+const RegisterModel = mongoose.model("Register", registerSchema);
+
+module.exports = { BookModel, RegisterModel };
