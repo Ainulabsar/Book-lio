@@ -17,12 +17,17 @@ const bookSchema = new Schema({
   },
   price: {
     type: Number,
+    required: true,
   },
-
+  available: {
+    type: Boolean,
+  },
   image: {
     type: String,
-    require: true,
+    required: true,
   },
 });
 
 module.exports = mongoose.model("Book", bookSchema);
+
+// books

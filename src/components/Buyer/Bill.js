@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Book.css";
 import { useLocation } from "react-router-dom";
 
 function Bill() {
   const location = useLocation();
   const bookData = location.state ? location.state.bookData : null;
+
+  const [quantity, setQuantity] = useState(1);
+
+  const handleInputChange = (e) => {
+    const newValue = e.target.value;
+    setQuantity(newValue);
+    console.log(newValue);
+  };
 
   console.log("Location state:", location.state); // Check the location.state object
   console.log("bookData:", bookData);
@@ -49,6 +57,7 @@ function Bill() {
               <div className="bdetails">
                 <p className="Bill">
                   <strong>Bill No:</strong>
+                  <input type="number" />
                 </p>
                 <p className="Date">
                   <strong>Date: </strong>
@@ -76,14 +85,21 @@ function Bill() {
                       <th scope="row">1</th>
                       <td>{bookData.book.name}</td>
                       {/* <td>{bookData.name}</td> */}
-                      <td>1</td>
+                      <td>
+                        <input
+                          type="number"
+                          value={quantity}
+                          onChange={handleInputChange}
+                        />
+                      </td>
                       <td>{bookData.book.price}</td>
                     </tr>
                   </tbody>
                 </table>
 
                 <p>
-                  Total Amount: <strong>{bookData.book.price} </strong>
+                  Total Amount:{" "}
+                  <strong>{bookData.book.price * quantity} </strong>
                 </p>
               </div>
             )}

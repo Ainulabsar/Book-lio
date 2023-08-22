@@ -23,6 +23,7 @@ const Add = () => {
         image: String(inputs.image),
       })
       .then((res) => res.data);
+    console.log("i am workng");
   };
 
   const handleSubmit = (e) => {
