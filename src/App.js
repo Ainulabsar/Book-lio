@@ -7,13 +7,18 @@ import BookDetail from "./components/BookDetail";
 import { Routes, Route } from "react-router-dom";
 import Book from "./components/Buyer/Book";
 import Bill from "./components/Buyer/Bill";
+import Login from "./components/login/login";
+import Signup from "./components/signup/signup";
 
 function App() {
   return (
     <>
       <Nav />
+      {/* <Login /> */}
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/Home" element={<Home />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/Add" element={<Add />}></Route>
         <Route path="/books/:id" element={<BookDetail />}></Route>
