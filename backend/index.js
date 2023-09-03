@@ -68,7 +68,6 @@ app.post("/signup", async (req, res) => {
       await collection.insertMany([data]);
     }
   } catch (error) {
-    res.json("notexixt");
     console.log(error);
   }
 });

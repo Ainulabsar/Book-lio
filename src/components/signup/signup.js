@@ -35,57 +35,59 @@ function Signup() {
 
   return (
     <div className="login">
-      <h3>Sign-up</h3>
-      <form action="post">
-        <div className="mb-3">
-          <label for="exampleInputEmail1" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            placeholder="Enter Email Address"
-            className="form-control"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+      <div>
+        <h3 className="sh">Sign-up</h3>
+        <form action="post">
+          <div className="mb-3">
+            <label for="exampleInputEmail1" className="form-label">
+              Email address
+            </label>
+            <input
+              type="email"
+              placeholder="Enter Email Address"
+              className="form-control"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" className="form-text">
+              We'll never share your email with anyone else.
+            </div>
           </div>
-        </div>
-        <div className="mb-3">
-          <label for="exampleInputPassword1" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            onChange={(e) => {
-              setPasswword(e.target.value);
-            }}
-            placeholder="Enter Password"
-            id="exampleInputPassword1"
-          />
-        </div>
-        <div className="d-grid gap-2">
-          <button type="submit" className="btn btn-primary" onClick={submit}>
-            Submit
-          </button>
-        </div>
-        <br />
-        <div id="emailHelp" className="form-text">
-          if Already had an account please login
-        </div>
-        <div className="d-grid gap-2">
-          <button type="submit" className="btn btn-primary">
-            <Link to={"/"} className="log">
-              Login
-            </Link>
-          </button>
-        </div>
-      </form>
+          <div className="mb-3">
+            <label for="exampleInputPassword1" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              onChange={(e) => {
+                setPasswword(e.target.value);
+              }}
+              placeholder="Enter Password"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div className="d-grid gap-2">
+            <button type="submit" className="btn btn-primary" onClick={submit}>
+              Submit
+            </button>
+          </div>
+          <br />
+          <div id="emailHelp" className="form-text">
+            if Already had an account please login
+          </div>
+          <div className="d-grid gap-2">
+            <button type="submit" className="btn btn-primary">
+              <Link to={"/"} className="log">
+                Login
+              </Link>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
