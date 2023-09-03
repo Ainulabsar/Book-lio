@@ -7,15 +7,19 @@ function Signup() {
   const history = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPasswword] = useState();
+  const [conpasssowrd, setConpasswword] = useState();
+  const [name, setName] = useState();
 
   async function submit(e) {
+    console.log(password);
     console.log("signup successful");
     e.preventDefault();
     try {
       await axios
-        .post("http://localhost:5000/", {
+        .post("http://localhost:5000/signup", {
           email,
           password,
+          name,
         })
         .then((res) => {
           console.log(res.data);
@@ -28,6 +32,14 @@ function Signup() {
         .catch((e) => {
           alert("wrong details");
         });
+      if (password == conpasssowrd) {
+        console.log("password confirmed");
+        history("/home");
+      } else {
+        console.log("rewrite password");
+        alert("password not matched");
+        history("/signup");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -38,6 +50,20 @@ function Signup() {
       <div>
         <h3 className="sh">Sign-up</h3>
         <form action="post">
+          <div className="mb-3">
+            <label for="exampleInputPassword1" className="form-label">
+              User Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              placeholder="Enter User Name"
+              id="exampleInputPassword1"
+            />
+          </div>
           <div className="mb-3">
             <label for="exampleInputEmail1" className="form-label">
               Email address
@@ -65,6 +91,20 @@ function Signup() {
               className="form-control"
               onChange={(e) => {
                 setPasswword(e.target.value);
+              }}
+              placeholder="Enter Password"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div className="mb-3">
+            <label for="exampleInputPassword1" className="form-label">
+              Confim Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              onChange={(e) => {
+                setConpasswword(e.target.value);
               }}
               placeholder="Enter Password"
               id="exampleInputPassword1"

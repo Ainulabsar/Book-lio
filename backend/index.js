@@ -28,6 +28,9 @@ const newSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  name: {
+    type: String,
+  },
 });
 
 const collection = mongoose.model("collection", newSchema);
@@ -50,11 +53,12 @@ app.post("/", async (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, name } = req.body;
 
   const data = {
     email: email,
     password: password,
+    name: name,
   };
 
   try {
