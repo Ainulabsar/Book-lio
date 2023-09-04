@@ -1,14 +1,18 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useLocation } from "react-router-dom";
 // import book from "./Buyer/book";
 import "./Nav.css";
 function Nav() {
+  const location = useLocation();
+  console.log(location.state);
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             BookLio
+            {/* <h1>Hello {location.state.id} </h1> */}
           </a>
           <button
             className="navbar-toggler"

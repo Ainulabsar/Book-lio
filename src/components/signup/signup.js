@@ -9,9 +9,10 @@ function Signup() {
   const [password, setPasswword] = useState();
   const [conpasssowrd, setConpasswword] = useState();
   const [name, setName] = useState();
+  const [Buyer, setBuyer] = useState();
+  const [Seller, setSeller] = useState();
 
   async function submit(e) {
-    console.log(password);
     console.log("signup successful");
     e.preventDefault();
     try {
@@ -26,15 +27,22 @@ function Signup() {
           if (res.data === "exist") {
             alert("user already exits");
           } else if ((res.data = "notexist")) {
-            history("/home");
+            if (Seller === "option1") {
+              history("/home");
+            } else if (Buyer === "option2") {
+              history("/book");
+              console.log("book");
+            } else {
+              alert("Please select your domain (Seller/Buyer)");
+            }
+            // history("/home", { state: { id: "name" } });
           }
         })
         .catch((e) => {
           alert("wrong details");
         });
-      if (password == conpasssowrd) {
+      if (password === conpasssowrd) {
         console.log("password confirmed");
-        history("/home");
       } else {
         console.log("rewrite password");
         alert("password not matched");
@@ -110,6 +118,51 @@ function Signup() {
               id="exampleInputPassword1"
             />
           </div>
+          <label>Please Select Your Domain</label>
+          <br />
+          <div className="form-check form-check-inline" id="radiobtn">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="option1"
+              onChange={(e) => {
+                setSeller(e.target.value);
+              }}
+            />
+            <label className="form-check-label" for="inlineRadio1">
+              Seller
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              value="option2"
+              onChange={(e) => {
+                setBuyer(e.target.value);
+              }}
+            />
+            <label className="form-check-label" for="inlineRadio2">
+              Buyer
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio3"
+              value="option3"
+              disabled
+            />
+            <label className="form-check-label" for="inlineRadio3">
+              Admin (disabled)
+            </label>
+          </div>
           <div className="d-grid gap-2">
             <button type="submit" className="btn btn-primary" onClick={submit}>
               Submit
@@ -117,7 +170,7 @@ function Signup() {
           </div>
           <br />
           <div id="emailHelp" className="form-text">
-            if Already had an account please login
+            if you Already Have an Account Please <strong>Login</strong> !
           </div>
           <div className="d-grid gap-2">
             <button type="submit" className="btn btn-primary">

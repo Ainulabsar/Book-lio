@@ -8,32 +8,39 @@ function Login() {
   const history = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPasswword] = useState();
+  const [Buyer, setBuyer] = useState();
+  const [Seller, setSeller] = useState();
 
   async function submit(e) {
     console.log("login successful");
+    console.log(Seller + "selected");
+    console.log(Buyer);
     e.preventDefault();
     try {
-      await axios
-        .post("http://localhost:5000/", {
-          email,
-          password,
-        })
-        .then((res) => {
-          console.log(res.data);
-          if (res.data === "exist") {
-            history("/home");
-          } else if ((res.data = "notexist")) {
-            alert("User have not sign up");
-          }
-        })
-        .catch((e) => {
-          alert("wrong details");
-        });
+      const res = await axios.post("http://localhost:5000/", {
+        email,
+        password,
+      });
+
+      if (res.data === "exist") {
+        if (Seller === "option1") {
+          // Seller is selected
+          history("/home"); // Replace with the appropriate URL for sellers
+        } else if (Buyer === "option2") {
+          // Buyer is selected
+          history("/book"); // Replace with the appropriate URL for buyers
+        } else {
+          // Neither Seller nor Buyer selected
+          alert("Please select your domain (Seller/Buyer)");
+        }
+      } else if (res.data === "notexist") {
+        alert("User has not signed up");
+      }
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      alert("An error occurred while logging in");
     }
   }
-
   return (
     <div className="login">
       <h3>Login</h3>
@@ -70,6 +77,80 @@ function Login() {
             id="exampleInputPassword1"
           />
         </div>
+        {/* <div className="dropdown">
+          <button
+            id="btn"
+            className="btn btn-primary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Please Select Your Domain
+          </button>
+          <ul className="dropdown-menu">
+
+            <li>
+              <a className="dropdown-item">
+                Seller
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" >
+                Buyer
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item">
+                Admin
+              </a>
+            </li>
+          </ul>
+        </div> */}
+        <label>Please Select Your Domain</label>
+        <br />
+        <div className="form-check form-check-inline" id="radiobtn">
+          <input
+            className="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
+            value="option1"
+            onChange={(e) => {
+              setSeller(e.target.value);
+            }}
+          />
+          <label className="form-check-label" for="inlineRadio1">
+            Seller
+          </label>
+        </div>
+        <div className="form-check form-check-inline">
+          <input
+            className="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="option2"
+            onChange={(e) => {
+              setBuyer(e.target.value);
+            }}
+          />
+          <label className="form-check-label" for="inlineRadio2">
+            Buyer
+          </label>
+        </div>
+        <div className="form-check form-check-inline">
+          <input
+            className="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio3"
+            value="option3"
+            disabled
+          />
+          <label className="form-check-label" for="inlineRadio3">
+            Admin (disabled)
+          </label>
+        </div>
         <div className="d-grid gap-2">
           <button type="submit" className="btn btn-primary" onClick={submit}>
             Submit
@@ -77,7 +158,7 @@ function Login() {
         </div>
         <br />
         <div id="emailHelp" className="form-text">
-          if you had not signup please register
+          if you are not a User Please Register !
         </div>
         <div className="d-grid gap-2">
           <button type="button" className="btn btn-primary">

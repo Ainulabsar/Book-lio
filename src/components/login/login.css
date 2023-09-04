@@ -12,3 +12,17 @@
         margin-top: 5px;
         padding: 5px;
 }
+.form-text{
+    text-align: center;
+}
+.dropdown{
+    width: 50px;
+    margin-bottom: 10px;
+}
+#btn{
+    padding-left: 50px;
+    padding-right: 30px;
+}
+#radiobtn{
+    margin-bottom: 10px;
+}
