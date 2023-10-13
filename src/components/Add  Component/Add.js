@@ -29,7 +29,7 @@ const Add = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(() => history("/"));
+    sendRequest().then(() => history("/home"));
   };
 
   const handleChange = (e) => {

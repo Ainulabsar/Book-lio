@@ -31,6 +31,12 @@ const newSchema = new mongoose.Schema({
   name: {
     type: String,
   },
+  Seller: {
+    type: String,
+  },
+  Buyer: {
+    type: String,
+  },
 });
 
 const collection = mongoose.model("collection", newSchema);
@@ -53,12 +59,14 @@ app.post("/", async (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  const { email, password, name } = req.body;
+  const { email, password, name, Seller, Buyer } = req.body;
 
   const data = {
     email: email,
     password: password,
     name: name,
+    Seller: Seller,
+    Buyer: Buyer,
   };
 
   try {

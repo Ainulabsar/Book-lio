@@ -2,8 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import "./Book.css";
 
+import { useState } from "react";
 const BookDetail = () => {
   const [inputs, setInputs] = useState({});
 
@@ -35,7 +36,7 @@ const BookDetail = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendRequest().then(() => history("/"));
+    sendRequest().then(() => history("/home"));
   };
 
   const handleChange = (e) => {

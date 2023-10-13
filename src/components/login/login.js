@@ -21,16 +21,14 @@ function Login() {
         email,
         password,
       });
-
+      console.log(res);
       if (res.data === "exist") {
         if (Seller === "option1") {
-          // Seller is selected
-          history("/home"); // Replace with the appropriate URL for sellers
+          history("/home");
         } else if (Buyer === "option2") {
-          // Buyer is selected
-          history("/book"); // Replace with the appropriate URL for buyers
+          history("/book");
+          console.log("book");
         } else {
-          // Neither Seller nor Buyer selected
           alert("Please select your domain (Seller/Buyer)");
         }
       } else if (res.data === "notexist") {

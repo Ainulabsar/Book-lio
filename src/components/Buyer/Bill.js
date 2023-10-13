@@ -18,6 +18,7 @@ function Bill() {
   console.log("bookData:", bookData);
   const handleSave = () => {
     console.log("Saved");
+    alert("Congratulations your order is completed");
     window.print();
   };
   //   const { _id, name, author, description, price, image } = props.book;

@@ -1,11 +1,16 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 // import book from "./Buyer/book";
 import "./Nav.css";
 function Nav() {
   const location = useLocation();
+  const history = useNavigate();
   console.log(location.state);
+
+  function logbtn() {
+    history("./");
+  }
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
@@ -63,6 +68,15 @@ function Nav() {
                   <a className="dropdown-item" href="/Book">
                     Buyer
                   </a>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={logbtn}
+                  >
+                    Logout
+                  </button>
                 </li>
               </ul>
             </div>

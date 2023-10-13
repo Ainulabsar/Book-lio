@@ -14,6 +14,8 @@ function Signup() {
 
   async function submit(e) {
     console.log("signup successful");
+    console.log(Seller);
+    console.log(Buyer);
     e.preventDefault();
     try {
       await axios
@@ -21,9 +23,11 @@ function Signup() {
           email,
           password,
           name,
+          Seller,
+          Buyer,
         })
         .then((res) => {
-          console.log(res.data);
+          console.log(res.config.data);
           if (res.data === "exist") {
             alert("user already exits");
           } else if ((res.data = "notexist")) {

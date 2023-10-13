@@ -41,6 +41,7 @@ import Book from "./components/Buyer/Book";
 import Bill from "./components/Buyer/Bill";
 import Login from "./components/login/login";
 import Signup from "./components/signup/signup";
+import Admin from "./components/Admin/admin";
 
 function AppWithNav() {
   return (
@@ -63,6 +64,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Login />}></Route>
       <Route path="/signup" element={<Signup />}></Route>
+      <Route path="/admin" element={<Admin />}></Route>
       <Route path="/*" element={<AppWithNav />}></Route>
     </Routes>
   );
