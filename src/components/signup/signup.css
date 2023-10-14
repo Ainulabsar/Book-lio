@@ -1,15 +1,25 @@
-.log{
+
+
+.log {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background-color: #FEFEFE;
+}
+
+.login {
+    background-image: linear-gradient(to bottom right, red, blue);
+        padding: 25px;
+        min-height: auto;
+        color: white;
+}
+
+.lo {
     color: white;
 }
 
 .sh{
     text-align: center;
-}
-.login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
 }

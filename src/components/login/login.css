@@ -1,8 +1,26 @@
-.login{
+
+
+.containerp {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(193, 192, 245, 0.5);
+   
+      backdrop-filter: blur(10px); 
+}
+
+.containerc {
+    background-image: linear-gradient(to bottom right, red, blue);
+    padding: 25px;
+    min-height: auto;
+    color: white;
+    
+}
+
+.form-text{
+    color: white;
 }
 .form{
     display: flex;
@@ -25,4 +43,7 @@
 }
 #radiobtn{
     margin-bottom: 10px;
+}
+.lo{
+    color: white;
 }
