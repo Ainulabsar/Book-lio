@@ -1,6 +1,4 @@
-*{
-    box-sizing: border-box;
-}
+
 
 .card{
     width: 14rem;
@@ -92,6 +90,4 @@ ul{
    z-index: 9999;
 
 }
-    .form {
-            width: 100%;
-        }
+    
