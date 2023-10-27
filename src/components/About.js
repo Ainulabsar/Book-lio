@@ -17,7 +17,7 @@ function About() {
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  Accordion Item #1
+                  What is Booklio
                 </button>
               </h2>
               <div
@@ -26,15 +26,14 @@ function About() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It
-                  is shown by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  Booklio is an innovative MERN-based web application that
+                  serves as a versatile platform for second-hand book
+                  enthusiasts. It facilitates seamless interactions between
+                  sellers and buyers, offering features such as user
+                  authentication, role selection (seller or buyer), book
+                  management, and the generation of downloadable bills in PDF
+                  format. Users can list, update, and delete books as sellers,
+                  or browse, purchase, and generate bills as buyers
                 </div>
               </div>
             </div>
@@ -48,7 +47,7 @@ function About() {
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Accordion Item #2
+                  What does seller do?{" "}
                 </button>
               </h2>
               <div
@@ -57,15 +56,19 @@ function About() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  In the "Booklio" app, a seller has several responsibilities
+                  and capabilities: <br /> <strong>Listing Books:</strong>{" "}
+                  Sellers can add their books to the platform, providing details
+                  such as book title, author, condition, and price. <br />
+                  <strong>Updating Book Information:</strong> Sellers have the
+                  ability to edit and update the information related to the
+                  books they have listed. This includes modifying book details
+                  or adjusting the pricing. <br />{" "}
+                  <strong>Deleting Books:</strong> If a seller wishes to remove
+                  a book listing from the platform, they can easily delete it.
+                  These actions collectively enable sellers to effectively
+                  manage their book listings and engage with potential buyers in
+                  the second-hand book marketplace provided by the app.
                 </div>
               </div>
             </div>
@@ -79,7 +82,7 @@ function About() {
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  Accordion Item #3
+                  What does buyers do
                 </button>
               </h2>
               <div
@@ -88,15 +91,11 @@ function About() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  Buyers in the "Booklio" app can browse books listed by
+                  sellers, view book details and prices, and make purchases by
+                  adding books to their cart. They can also generate bills for
+                  their selected books, which can be downloaded in PDF format
+                  for reference or payment.
                 </div>
               </div>
             </div>

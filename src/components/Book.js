@@ -11,7 +11,7 @@ function Book(props) {
     await axios
       .delete(`http://localhost:5000/books/${_id}`)
       .then((res) => res.data)
-      .then(() => history("/"));
+      .then(() => history("/home"));
   };
   return (
     <div className="books">

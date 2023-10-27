@@ -50,7 +50,7 @@ function Nav() {
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
@@ -65,7 +65,13 @@ function Nav() {
               >
                 Search
               </button>
-            </form>
+  </form> */}
+
+            {/* <div>
+              <button type="button" class="btn btn-primary">
+                Buyer
+              </button>
+            </div> */}
             <div className="dropdown">
               <button
                 type="button"
