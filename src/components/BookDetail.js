@@ -44,11 +44,12 @@ const BookDetail = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    // console.log(e.target.name, "value", e.target.value);
   };
-  //   console.log(inputs);
   return (
     <div className="container">
+      <div>
+        <h3>Update Book</h3>
+      </div>
       {inputs && (
         <form className="form" onSubmit={handleSubmit}>
           <div className="mb-3">

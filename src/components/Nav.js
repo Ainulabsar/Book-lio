@@ -1,17 +1,8 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-// import useState from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-// import book from "./Buyer/book";
 import "./Nav.css";
 function Nav() {
-  // const [searchTerm, setSearchTerm] = useState();
-  // const handleSearch = (e) => {
-  //   const term = e.target.value;
-  //   console.log(term);
-  //   setSearchTerm(term);
-  // };
-
   const location = useLocation();
   const history = useNavigate();
   console.log(location.state);
@@ -24,7 +15,6 @@ function Nav() {
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             BookLio
-            {/* <h1>Hello {location.state.id} </h1> */}
           </a>
           <button
             className="navbar-toggler"
@@ -50,28 +40,16 @@ function Nav() {
                 </a>
               </li>
             </ul>
-            {/* <form className="d-flex" role="search">
+            <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search for books..."
-                // value={searchTerm}
-                // onChange={handleSearch}
               />
-              <button
-                className="btn btn-outline-success"
-                type="submit"
-                // onClick={handleSearch}
-              >
+              <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
-  </form> */}
-
-            {/* <div>
-              <button type="button" class="btn btn-primary">
-                Buyer
-              </button>
-            </div> */}
+            </form>
             <div className="dropdown">
               <button
                 type="button"
@@ -80,7 +58,6 @@ function Nav() {
               >
                 <MenuIcon />
               </button>
-
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="/Book">

@@ -39,7 +39,6 @@ function Signup() {
             } else {
               alert("Please select your domain (Seller/Buyer)");
             }
-            // history("/home", { state: { id: "name" } });
           }
         })
         .catch((e) => {
@@ -56,7 +55,6 @@ function Signup() {
       console.log(error);
     }
   }
-
   return (
     <div className="log">
       <div className="login">

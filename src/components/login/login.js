@@ -22,6 +22,7 @@ function Login() {
         password,
       });
       console.log(res);
+      console.log(res.data);
       if (res.data === "exist") {
         if (Seller === "option1") {
           history("/home");
